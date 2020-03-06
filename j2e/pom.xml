@@ -41,11 +41,11 @@
     </build>
 
     <modules>  
-        <module>src/statistics</module>
-        <module>src/planning</module>
-        <module>src/billing</module>
-        <module>src/droneManagment</module>
-        <module>src/packageStorage</module>
+        <module>src/main/droneDelivery/components/statistics</module>
+        <module>src/main/droneDelivery/components/planning</module>
+        <module>src/main/droneDelivery/components/billing</module>
+        <module>src/main/droneDelivery/components/droneManagment</module>
+        <module>src/main/droneDelivery/components/packageStorage</module>
     </modules>
 
 </project>
