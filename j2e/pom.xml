@@ -41,9 +41,9 @@
     </build>
 
     <modules>  
-        <module>statistics</module>
-        <module>planning</module>
-        <module>billing</module>
+        <module>src/statistics</module>
+        <module>src/planning</module>
+        <module>src/billing</module>
     </modules>
 
 </project>
