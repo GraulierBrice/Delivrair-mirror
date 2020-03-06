@@ -46,6 +46,7 @@
         <module>src/main/droneDelivery/components/billing</module>
         <module>src/main/droneDelivery/components/droneManagment</module>
         <module>src/main/droneDelivery/components/packageStorage</module>
+        <module>src/main/droneDelivery/interface</module>
     </modules>
 
 </project>
