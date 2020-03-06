@@ -1,3 +1,5 @@
+package fr.polytech.team.n;
+
 public class Customer {
     private int id;
     private String lastName;
