@@ -44,6 +44,8 @@
         <module>src/statistics</module>
         <module>src/planning</module>
         <module>src/billing</module>
+        <module>src/droneManagment</module>
+        <module>src/packageStorage</module>
     </modules>
 
 </project>
