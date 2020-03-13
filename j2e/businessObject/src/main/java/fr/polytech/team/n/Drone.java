@@ -1,3 +1,5 @@
+package fr.polytech.team.n;
+
 public class Drone {
     private int id;
     private long flightTime;

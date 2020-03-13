@@ -60,6 +60,7 @@
         <module>billing</module>
         <module>droneManagment</module>
         <module>packageStorage</module>
+        <module>businessObject</module>
     </modules>
 
 </project>
