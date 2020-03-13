@@ -1,6 +1,7 @@
 package fr.polytech.team.n;
 
 public class Package {
+
     private int id;
     private String address;
     private Customer customer;
@@ -10,4 +11,28 @@ public class Package {
         this.address = address;
         this.customer = customer;
     }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 }

@@ -61,6 +61,8 @@
         <module>droneManagment</module>
         <module>packageStorage</module>
         <module>businessObject</module>
+        <module>utils</module>
+        <module>exception</module>
     </modules>
 
 </project>
