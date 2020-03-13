@@ -1,5 +1,6 @@
+package fr.polytech.team.n;
 
 public interface CreateBill{
-   // void addToBill(Delivery);
+    public void addToBill(Delivery delivery);
 
 }
