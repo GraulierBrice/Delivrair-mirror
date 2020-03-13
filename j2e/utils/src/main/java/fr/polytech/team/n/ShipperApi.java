@@ -14,17 +14,17 @@ public class ShipperApi {
         this("localhost", "9090");
     }
 
-    public boolean performPayment(Package pack) throws ExternalPartnerException {
+    public JSONObject performPayment(Package pack) throws ExternalPartnerException {
         // Retrieving the payment status
-        JSONObject payment;
+        JSONObject info;
         try {
             String response = WebClient.create(url).path("parcels/by_id/" + pack.getId() ).get(String.class);
-            payment = new JSONObject(response);
+            info = new JSONObject(response);
         } catch (Exception e) {
             throw new ExternalPartnerException(url + "parcels/by_id/" + pack.getId(), e);
         }
         // Assessing the payment status
-        return (payment.getInt("Status") == 0);
+        return info;
     }
 
 }
