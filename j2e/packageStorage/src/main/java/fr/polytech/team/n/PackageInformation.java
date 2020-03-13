@@ -5,5 +5,8 @@ import java.util.List;
 
 @Local
 public interface PackageInformation {
+
     List<Package> getPackages();
+
+    Package getPackageById(int id);
 }

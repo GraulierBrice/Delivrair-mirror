@@ -6,6 +6,8 @@ import java.util.List;
 
 @Local
 public interface PlanningManager {
+    String plan(Calendar calendar, int id);
+
     boolean addDelivery(Calendar calendar, Package pack);
 
     void cancelDelivery(Delivery delivery);
