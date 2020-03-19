@@ -21,10 +21,11 @@ public class ShipperApi {
         JSONObject info;
         Package pack=new Package(id);
         try {
-            String response = WebClient.create(url).path("parcels/by_id/" + id ).get(String.class);
+            String response = WebClient.create(url).path("parcels/_by_id/" + id ).get(String.class);
             info = new JSONObject(response);
-            pack.setCustomer(new Customer(info.getInt("customerId"),info.getString("firstName"),info.getString("lastName")));
-            pack.setAddress(info.getString("address"));
+            String[] name=info.getString("Owner").split(" ");
+            pack.setCustomer(new Customer(0,name[0],name[1]));
+            pack.setAddress(info.getString("Destination"));
         } catch (Exception e) {
             throw new ExternalPartnerException(url + "parcels/by_id/" + id, e);
         }
