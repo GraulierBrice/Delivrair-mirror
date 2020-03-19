@@ -5,3 +5,4 @@ target/
 *.prefs
 .factorypath
 *.class
+*.iml
