@@ -1,8 +1,9 @@
-package fr.polytech.team.n;
-
 import java.util.Calendar;
 
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
+import javax.jws.WebService;
 
 @WebService(name = "DeliveryWebService", targetNamespace = "lol.fr")
 public interface DeliveryWebService {
