@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DeliveryWebServiceImplService" targetNamespace="http://www.n.team.polytech.fr/deliverywebservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.n.team.polytech.fr/deliverywebservice/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://www.n.team.polytech.fr/deliverywebservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.n.team.polytech.fr/deliverywebservice/" version="1.0">
+
+  <xs:element name="planDelivery" type="tns:planDelivery"/>
+
+  <xs:element name="planDeliveryResponse" type="tns:planDeliveryResponse"/>
+
+  <xs:complexType name="planDelivery">
+    <xs:sequence>
+      <xs:element name="calendar" type="xs:int"/>
+      <xs:element name="idPackage" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="planDeliveryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="package_information" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="planDelivery">
+    <wsdl:part name="parameters" element="tns:planDelivery">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="planDeliveryResponse">
+    <wsdl:part name="parameters" element="tns:planDeliveryResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DeliveryWebService">
+    <wsdl:operation name="planDelivery">
+      <wsdl:input name="planDelivery" message="tns:planDelivery">
+    </wsdl:input>
+      <wsdl:output name="planDeliveryResponse" message="tns:planDeliveryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeliveryWebServiceImplServiceSoapBinding" type="tns:DeliveryWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="planDelivery">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="planDelivery">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="planDeliveryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeliveryWebServiceImplService">
+    <wsdl:port name="DeliveryWebServiceImplPort" binding="tns:DeliveryWebServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:9090/DeliveryWebServiceImplPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
