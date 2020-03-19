@@ -16,7 +16,8 @@ public class Main extends Shell<DDPublicAPI> {
 		// Registering the command available for the user
 		register(
 				// Getting out of here
-				Bye.class
+				Bye.class,
+				PlanDelivery.class
 		);
 	}
 
