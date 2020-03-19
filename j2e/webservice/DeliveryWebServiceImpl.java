@@ -1,15 +1,15 @@
-package webservice;
+package fr.polytech.team.n;
 
 import java.util.Calendar;
 
-@WebService(targetNamespace = "todo.fr")
+@WebService(targetNamespace = "lol.fr")
 @Stateless(name = "DeliveryWS")
 public class DeliveryWebServiceImpl implements DeliveryWebService {
 
-	@EJB(name="stateless-delivery") private PlanningManager pm;
+	@EJB private PlanningManager pm;
 
 	@Override
-	public String planDelibery(int calendar, int idPackage) {
+	public String planDelivery(int calendar, int idPackage) {
         return pm.plan(calendar, id);
     }
 }
