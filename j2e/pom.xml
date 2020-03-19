@@ -186,6 +186,7 @@
         <module>businessObject</module>
         <module>utils</module>
         <module>exception</module>
+        <module>webservice</module>
     </modules>
 
 </project>

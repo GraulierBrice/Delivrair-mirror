@@ -9,7 +9,7 @@ public class DeliveryWebServiceImpl implements DeliveryWebService {
 	@EJB(name="stateless-delivery") private PlanningManager pm;
 
 	@Override
-	public String planDelibery(Calendar calendar, int idPackage) {
+	public String planDelibery(int calendar, int idPackage) {
         return pm.plan(calendar, id);
     }
 }
