@@ -1,13 +1,15 @@
 package fr.polytech.team.n;
 
 import javax.ejb.Local;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import java.util.Calendar;
 import java.util.List;
 
-@Local
+@Stateless
 public class Planning implements PlanningManager {
-    
-    private PackageInformation packageInformation;
+
+    @EJB private PackageInformation packageInformation;
 
 // Temporaire pour le MVP
     @Override
