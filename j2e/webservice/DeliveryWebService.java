@@ -5,7 +5,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-@WebService(name = "DeliveryWebService", targetNamespace = "lol.fr")
+@WebService(name = "DeliveryWebService", targetNamespace = "deliveryWebService")
 public interface DeliveryWebService {
 
     @WebMethod
