@@ -35,4 +35,16 @@ public class PackageStorageBean implements AddPackage, PackageInformation {
             return null;
         }
     }
+
+    @PostConstruct
+    private void initializeRestPartnership() {
+        try {
+            Properties prop = new Properties();
+            prop.load(this.getClass().getResourceAsStream("/shipper.properties"));
+            shipper = new ShipperApi(prop.getProperty("shipperHostName"),
+                    prop.getProperty("shipperPortNumber"));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
