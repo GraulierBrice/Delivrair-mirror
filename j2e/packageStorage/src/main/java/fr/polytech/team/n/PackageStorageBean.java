@@ -18,6 +18,11 @@ public class PackageStorageBean implements AddPackage, PackageInformation {
     private ShipperApi shipper;
 
     @Override
+    public void useShipperReference(ShipperApi shipper){
+        this.shipper=shipper;
+    }
+
+    @Override
     public void registerPackage(int packageId, Shipper shipper) {
     }
 

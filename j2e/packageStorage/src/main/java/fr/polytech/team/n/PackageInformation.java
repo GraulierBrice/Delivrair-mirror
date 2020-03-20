@@ -5,6 +5,7 @@ import java.util.List;
 
 @Local
 public interface PackageInformation {
+    void useShipperReference(ShipperApi shipper);
 
     List<Package> getPackages();
 
