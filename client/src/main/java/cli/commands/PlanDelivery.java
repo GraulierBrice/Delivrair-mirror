@@ -27,6 +27,6 @@ public class PlanDelivery extends Command<DDPublicAPI> {
 
     @Override
     public String describe() {
-        return "Plan the delivery of a package to a given date (register DATE PACKAGE_ID)";
+        return "Plan the delivery of a package to a given date (plan DATE PACKAGE_ID)";
     }
 }
