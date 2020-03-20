@@ -6,6 +6,9 @@ public class Package {
     private String address;
     private Customer customer;
 
+    public Package() {
+    }
+
     public Package(int id){
         this.id=id;
     }

@@ -23,7 +23,7 @@ public class Main extends Shell<DDPublicAPI> {
 
 	public static void main(String[] args) {
 		String host = ( args.length == 0 ? "localhost" : args[0] );
-		String port = ( args.length < 2  ? "9090"      : args[1] );
+		String port = ( args.length < 2  ? "8080"      : args[1] );
 		System.out.println("\n\nStarting Drone Delivery");
 		System.out.println("  - Remote server: " + host);
 		System.out.println("  - Port number:   " + port);
