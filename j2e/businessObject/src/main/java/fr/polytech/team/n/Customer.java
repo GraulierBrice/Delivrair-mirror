@@ -1,10 +1,8 @@
 package fr.polytech.team.n;
 
-import javax.persistence.Entity;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -14,6 +12,8 @@ public class Customer {
 
     private String lastName;
     private String firstName;
+    @OneToMany(mappedBy = "customer")
+    private Set<Package> packages;
 
     public Customer(){ }
 
@@ -45,6 +45,14 @@ public class Customer {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public Set<Package> getPackages() {
+        return packages;
+    }
+
+    public void setPackages(Set<Package> packages) {
+        this.packages = packages;
     }
 
     @Override
