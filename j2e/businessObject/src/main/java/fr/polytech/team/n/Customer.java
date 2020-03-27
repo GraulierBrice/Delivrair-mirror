@@ -1,24 +1,33 @@
 package fr.polytech.team.n;
 
+import javax.persistence.*;
+import java.util.Objects;
+import java.util.Set;
+
+@Entity
 public class Customer {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String lastName;
     private String firstName;
+    @OneToMany(mappedBy = "customer")
+    private Set<Package> packages;
 
-    public Customer() {
-    }
+    public Customer(){ }
 
-    public Customer(int id, String lastName, String firstName) {
+    public Customer(Long id, String lastName, String firstName) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -36,5 +45,34 @@ public class Customer {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public Set<Package> getPackages() {
+        return packages;
+    }
+
+    public void setPackages(Set<Package> packages) {
+        this.packages = packages;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return getId().equals(customer.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                '}';
     }
 }
