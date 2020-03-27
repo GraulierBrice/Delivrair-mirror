@@ -15,7 +15,7 @@ public class DeliveryWebServiceImpl implements DeliveryWebService {
 	@EJB private PlanningManager pm;
 
 	@Override
-	public String planDelivery(int calendar, int idPackage) {
+	public String planDelivery(int calendar, Long idPackage) {
         return pm.plan(calendar, idPackage);
     }
 }

@@ -12,5 +12,5 @@ public interface DeliveryWebService {
 
     @WebMethod
     @WebResult(name = "package_information")
-    String planDelivery(@WebParam(name = "calendar") int calendar, @WebParam(name = "idPackage") int idPackage);
+    String planDelivery(@WebParam(name = "calendar") int calendar, @WebParam(name = "idPackage") Long idPackage);
 }

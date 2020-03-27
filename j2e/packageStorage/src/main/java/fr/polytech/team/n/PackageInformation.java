@@ -9,5 +9,5 @@ public interface PackageInformation {
 
     List<Package> getPackages();
 
-    Package getPackageById(int id);
+    Package getPackageById(Long id);
 }

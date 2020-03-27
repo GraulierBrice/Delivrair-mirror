@@ -4,5 +4,5 @@ import javax.ejb.Local;
 
 @Local
 public interface AddPackage {
-    void registerPackage(int packageId, Shipper shipper);
+    void registerPackage(Long packageId, Shipper shipper);
 }

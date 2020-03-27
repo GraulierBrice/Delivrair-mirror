@@ -12,7 +12,7 @@ public class Planning implements PlanningManager {
 
 // Temporaire pour le MVP
     @Override
-    public String plan(int calendar, int id) {
+    public String plan(int calendar, Long id) {
         Package pack = packageInformation.getPackageById(id);
         return pack.toString();
     }

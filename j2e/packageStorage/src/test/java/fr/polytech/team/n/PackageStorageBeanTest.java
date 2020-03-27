@@ -19,14 +19,14 @@ class PackageStorageBeanTest {
     @Before
     public void setUpContext() throws Exception {
         initMock();
-        p = new Package(1);
-        p.setCustomer(new Customer(0, "a", "b"));
+        p = new Package(1l);
+        p.setCustomer(new Customer(0l, "a", "b"));
         p.setAddress("c");
     }
 
     @org.junit.Test
     public void getPackageByIdTest() {
-        Package p2 = pack.getPackageById(1);
+        Package p2 = pack.getPackageById(1l);
         assertEquals(p.getAddress(), p2.getAddress());
     }
 
@@ -34,7 +34,7 @@ class PackageStorageBeanTest {
         // Mocking the external partner
         ShipperApi mocked = mock(ShipperApi.class);
         pack.useShipperReference(mocked);
-        when(mocked.getPackage(eq(1))).thenReturn(p);
+        when(mocked.getPackage(eq(1l))).thenReturn(p);
     }
 
     @Test

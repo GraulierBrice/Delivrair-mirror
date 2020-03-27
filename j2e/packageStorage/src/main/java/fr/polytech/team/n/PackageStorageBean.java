@@ -23,7 +23,7 @@ public class PackageStorageBean implements AddPackage, PackageInformation {
     }
 
     @Override
-    public void registerPackage(int packageId, Shipper shipper) {
+    public void registerPackage(Long packageId, Shipper shipper) {
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PackageStorageBean implements AddPackage, PackageInformation {
     }
 
     @Override
-    public Package getPackageById(int id)  {
+    public Package getPackageById(Long id)  {
         try {
            return shipper.getPackage(id);
         } catch (ExternalPartnerException e) {
