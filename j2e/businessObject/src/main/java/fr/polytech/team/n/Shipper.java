@@ -1,10 +1,8 @@
 package fr.polytech.team.n;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Shipper {
@@ -13,6 +11,10 @@ public class Shipper {
     private Long id;
 
     private String name;
+    @OneToMany(mappedBy = "shipper")
+    private Set<Package> packages;
+    @OneToMany(mappedBy = "shipper")
+    private Bill bill;
 
     public Shipper() {
     }
@@ -36,6 +38,22 @@ public class Shipper {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Package> getPackages() {
+        return packages;
+    }
+
+    public void setPackages(Set<Package> packages) {
+        this.packages = packages;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
+        this.bill = bill;
     }
 
     @Override
