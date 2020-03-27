@@ -16,7 +16,7 @@ public class ShipperApi {
         this("localhost", "9090");
     }
 
-    public Package getPackage(int id) throws ExternalPartnerException {
+    public Package getPackage(Long id) throws ExternalPartnerException {
         // Retrieving the payment status
         JSONObject info;
         Package pack=new Package(id);
@@ -24,7 +24,7 @@ public class ShipperApi {
             String response = WebClient.create(url).path("parcels/_by_id/" + id ).get(String.class);
             info = new JSONObject(response);
             String[] name=info.getString("Owner").split(" ");
-            pack.setCustomer(new Customer(0,name[0],name[1]));
+            pack.setCustomer(new Customer(0l,name[0],name[1]));
             pack.setAddress(info.getString("Destination"));
         } catch (Exception e) {
             throw new ExternalPartnerException(url + "parcels/by_id/" + id, e);

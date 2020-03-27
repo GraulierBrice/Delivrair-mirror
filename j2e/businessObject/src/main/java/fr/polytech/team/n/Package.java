@@ -18,6 +18,10 @@ public class Package {
 
     public Package(){}
 
+    public Package(Long id){
+        this.id=id;
+    }
+
     public Package(Long id, String address, Customer customer) {
         this.id = id;
         this.address = address;
