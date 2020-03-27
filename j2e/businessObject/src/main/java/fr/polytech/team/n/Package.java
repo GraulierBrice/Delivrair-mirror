@@ -1,6 +1,9 @@
 package fr.polytech.team.n;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
@@ -10,11 +13,7 @@ public class Package {
     private Long id;
 
     private String address;
-
-    @ManyToOne
     private Customer customer;
-    @ManyToOne
-    private Shipper shipper;
 
     public Package(){}
 
@@ -46,14 +45,6 @@ public class Package {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Shipper getShipper() {
-        return shipper;
-    }
-
-    public void setShipper(Shipper shipper) {
-        this.shipper = shipper;
     }
 
     @Override

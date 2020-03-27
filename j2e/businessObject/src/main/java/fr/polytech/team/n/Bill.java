@@ -4,7 +4,10 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 
 @Entity
 public class Bill {
@@ -15,10 +18,7 @@ public class Bill {
     private double amount;
     private Calendar creationDate;
     private BillStatus status;
-    @ElementCollection
     private Set<Package> packages = new HashSet<>();
-    @ManyToOne
-    private Shipper shipper;
 
     public Bill(){ }
 
@@ -67,14 +67,6 @@ public class Bill {
 
     public void setPackages(Set<Package> packages) {
         this.packages = packages;
-    }
-
-    public Shipper getShipper() {
-        return shipper;
-    }
-
-    public void setShipper(Shipper shipper) {
-        this.shipper = shipper;
     }
 
     @Override

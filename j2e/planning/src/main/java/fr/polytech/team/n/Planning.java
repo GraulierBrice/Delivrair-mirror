@@ -16,7 +16,7 @@ public class Planning implements PlanningManager
 
     @Override
     public boolean addDelivery(Calendar calendar, Package pack){
-        planningSet.add(new Delivery(3l, calendar));
+        planningSet.add(new Delivery(3, calendar));
         return false;
     }
 
